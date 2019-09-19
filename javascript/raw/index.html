@@ -14,7 +14,6 @@
             <div class="clear">
             <label for="email">Email / Username</label>
             <input type="text" name="email" value="testing">
-              
             </div>
             <button id="login-button" onclick="login()">Login</button>
         </div>
@@ -29,12 +28,58 @@
         </div>
         <div class="wrapper step-4">
             <h2>Step 4: Send commands</h2>
-            <button disabled class="action" onclick="sendCommand('honk_horn')">Honk the horn!</button>
-            <button disabled class="action" onclick="sendCommand('lights_on')">Turn the lights on</button>
-            <button disabled class="action" onclick="sendCommand('lights_off')">Turn the lights off</button>
+            <!-- Wake -->
             <button disabled class="action" onclick="sendCommand('wake_up')">Wake Up Car</button>
+            <!-- Alerts -->
+            <button disabled class="action" onclick="sendCommand('honk_horn')">Honk the horn!</button>
+            <button disabled class="action" onclick="sendCommand('flash_lights')">Flash lights once</button>
+            <!-- Remote Start -->
+            <button disabled class="action" onclick="sendCommand('remote_start_drive')">Remote start</button>
+            <!-- Speed Limit -->
+            <button disabled class="action" onclick="sendCommand('speed_limit_set_limit')">Set maximium speed allowed when Speed Limit Mode is active</button>
+            <button disabled class="action" onclick="sendCommand('speed_limit_activate')">Activate Speed Limit Mode</button>
+            <button disabled class="action" onclick="sendCommand('speed_limit_deactivate')">Deactivate Speed Limit Mode</button>
+            <button disabled class="action" onclick="sendCommand('speed_limit_clear_pin')">Clear the currently set PIN for Speed Limit Mode</button>
+            <!-- Valet Mode -->
+            <button disabled class="action" onclick="sendCommand('set_valet_mode')">Activate or deactivate Valet Mode</button>
+            <button disabled class="action" onclick="sendCommand('reset_valet_pin')">Clear the currently set PIN for Valet Mode</button>
+            <!-- Sentry Mode -->
+            <button disabled class="action" onclick="sendCommand('set_sentry_mode')">Turn sentry mode on or off</button>
+            <!-- Doors -->
+            <button disabled class="action" onclick="sendCommand('door_unlock')">Unlocks the doors</button>
+            <button disabled class="action" onclick="sendCommand('door_lock')">Lock the doors</button>
+            <!-- Frunk / Trunk -->
+            <button disabled class="action" onclick="sendCommand('actuate_trunk')">Open either the front or rear trunk</button>
+            <!-- Sunroot -->
+            <button disabled class="action" onclick="sendCommand('sun_roof_control')">Controls the panoramic sunroof on the Model S</button>
+            <!-- Charging -->
             <button disabled class="action" onclick="sendCommand('start_charging')">Start charging</button>
-            <button disabled class="action" onclick="sendCommand('stop_charging')">Stop charging</button>
+            <button disabled class="action" onclick="sendCommand('charge_port_door_open')">Open the charge port</button>
+            <button disabled class="action" onclick="sendCommand('charge_port_door_close')">Close the charge port</button>
+            <button disabled class="action" onclick="sendCommand('charge_start')">Start charging</button>
+            <button disabled class="action" onclick="sendCommand('charge_stop')">Stop charging</button>
+            <button disabled class="action" onclick="sendCommand('charge_standard')">Set the charge limit to "standard" or ~90%</button>
+            <button disabled class="action" onclick="sendCommand('charge_max_range')">Set the charge limit to "max range" or 100%</button>
+            <button disabled class="action" onclick="sendCommand('set_charge_limit')">Set the charge limit to a custom value</button>
+            <!-- Climate -->
+            <button disabled class="action" onclick="sendCommand('auto_conditioning_start')">Start the climate control system</button>
+            <button disabled class="action" onclick="sendCommand('auto_conditioning_stop')">Stop the climate control system</button>
+            <button disabled class="action" onclick="sendCommand('set_temps')">Sets the target temperature for the climate control system</button>
+            <button disabled class="action" onclick="sendCommand('remote_seat_heater_request')">Sets the specified seat's heater level</button>
+            <button disabled class="action" onclick="sendCommand('remote_steering_wheel_heater_request')">Turn steering wheel heater on or off</button>
+            <!-- Media -->
+            <button disabled class="action" onclick="sendCommand('media_toggle_playback')">Toggles the media between playing and paused</button>
+            <button disabled class="action" onclick="sendCommand('media_next_track')">Skips to the next track in the current playlist</button>
+            <button disabled class="action" onclick="sendCommand('media_prev_track')">Skips to the previous track in the current playlist</button>
+            <button disabled class="action" onclick="sendCommand('media_next_fav')">Skips to the next saved favorite in the media system</button>
+            <button disabled class="action" onclick="sendCommand('media_prev_fav')">Skips to the previous saved favorite in the media system</button>
+            <button disabled class="action" onclick="sendCommand('media_volume_up')">Turns up the volume of the media system</button>
+            <button disabled class="action" onclick="sendCommand('media_volume_down')">Turns down the volume of the media system</button>
+            <!-- Navigation -->
+            <button disabled class="action" onclick="sendCommand('navigation_request')">Sends a location for the car to start navigation</button>
+            <!-- Navigation -->
+            <button disabled class="action" onclick="sendCommand('schedule_software_update')">Schedules a software update to be installed</button>
+            <button disabled class="action" onclick="sendCommand('cancel_software_update')">Cancels a software update</button>
             <button disabled class="action" onclick="sendCommand('invalid')">Invalid command</button>
         </div>
          <div class="wrapper step-5">
@@ -42,8 +87,14 @@
             <button disabled class="action" onclick="getInfo('charge_state')">Charge State </button>
             <button disabled class="action" onclick="getInfo('climate_state')">Climate State</button>
             <button disabled class="action" onclick="getInfo('drive_state')">Driving and Position</button>
+            <button disabled class="action" onclick="getInfo('gui_settings')">GUI Settings</button>
+            <button disabled class="action" onclick="getInfo('vehicle_state')">Vehicle State</button>
+            <button disabled class="action" onclick="getInfo('vehicle_config')">Vehicle Config</button>
             <button disabled class="action" onclick="getInfo('invalid')">Invalid request</button>
         </div>
+        <!-- TODO Data -->
+        <!-- TODO Mobile enabled -->
+        <!-- TODO Nearby_charging_sites -->
         <div class="wrapper">
             <h2>Messages</h2>
             <ul id="messages" class="message-list"></ul>

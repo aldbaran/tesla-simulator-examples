@@ -109,7 +109,7 @@ function sendCommand(command) {
         console.log('commandSuccess data? ', data);
     }
 
-    var url = apiPath + 'vehicles/' + currentVehicle + '/command/' + command;
+    var url = apiPath + 'vehicles/' + currentVehicle + (command !== 'wake_up' ? '/command/' : '/') + command;
     makeRequest(url, commandSuccess, null, true);
 }
 
@@ -147,7 +147,7 @@ function addVehiclesToList(vehicles) {
     addVehicle(list, 'Please select', -1);
 
     for (var i = 0; i < vehicles.length; i++) {
-        addVehicle(list, vehicles[i].display_name, vehicles[i].vehicle_id);
+        addVehicle(list, vehicles[i].display_name, vehicles[i].id_s);
     }
     addMessage('Added ' + vehicles.length + ' cars to the list');
 
